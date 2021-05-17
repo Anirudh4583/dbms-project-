@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaHome } from 'react-icons/fa';
 import Axios from 'axios';
 import Switch from 'react-switch';
-import './regStyle.css';
+// import './regStyle.css';
 import { useHistory } from 'react-router';
 
 function RegisterPage() {

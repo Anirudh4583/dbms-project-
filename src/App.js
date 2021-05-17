@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, useHistory } from 'react-router-dom';
-import Homepage from './components/homepage/homepage.js';
-import Login from './components/login/login.js';
-import RegisterPage from './components/register/RegisterPage.js';
+import Homepage from './components/homepage/homepage';
+import Login from './components/login/login';
+import RegisterPage from './components/register/RegisterPage';
 import Dash from './components/dashboard/dash';
 import Donate from './components/donate/donate';
 import Request from './components/request/request';

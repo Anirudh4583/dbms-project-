@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaHome } from 'react-icons/fa';
 import { useHistory } from 'react-router-dom';
 import Axios from 'axios';
+// import './reqStyle.css';
 
 function Request() {
   document.title = 'Request';
@@ -28,19 +29,18 @@ function Request() {
       }).then((response) => {
         limit = response.data.length;
         console.log(response.data.length);
-        
-        for(let i =0 ; i<response.data.length ;i++){
+
+        for (let i = 0; i < response.data.length; i++) {
           const newUser = {
             name: response.data[i].name,
             email: response.data[i].email,
             address: response.data[i].address,
-             phone: response.data[i].phone,
+            phone: response.data[i].phone,
           };
           console.log(newUser);
-          setUserArray([
-               ...userArray,newUser]);
+          setUserArray([...userArray, newUser]);
         }
-      //  console.log(userArray);
+        //  console.log(userArray);
         // setUserArray([
         //   ...userArray,
         //   {
@@ -67,17 +67,14 @@ function Request() {
       </div>
 
       <div className='form'>
-      {userArray.map((value) => {
-        
+        {userArray.map((value) => {
           <div>
             <h1>{value.name}</h1>
             <h1>{value.email}</h1>
             <h1>{value.phone}</h1>
             <h1>{value.address}</h1>
-          </div>
-          
-        
-      })}
+          </div>;
+        })}
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { FaHome } from 'react-icons/fa';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import Axios from 'axios';
-import './donStyle.css';
+// import './donStyle.css';
 
 function Donate() {
   document.title = 'Donate';
@@ -16,7 +16,7 @@ function Donate() {
       // console.log(response.data);
       if (response.data.loggedIn == true) {
         console.log(response.data.user[0]);
-        const tem1 = response.data.user[0].name;
+        // const tem1 = response.data.user[0].name;
         bloodg = response.data.user[0].bloodgroup;
         console.log(bloodg);
         Axios.post('http://localhost:3001/bloodcount', {

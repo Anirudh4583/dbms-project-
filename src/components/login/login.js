@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaHome } from 'react-icons/fa';
 import { Redirect, useHistory } from 'react-router-dom';
 import Axios from 'axios';
-import './logStyle.css';
+// import './logStyle.css';
 
 function Login() {
   let history = useHistory();

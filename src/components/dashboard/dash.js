@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { FaHome } from 'react-icons/fa';
+import React, { useState } from 'react';
+// import { FaHome } from 'react-icons/fa';
 import { useHistory } from 'react-router-dom';
 import Axios from 'axios';
-import './dashStyle.css';
+// import './dashStyle.css';
 
 function Dash() {
   let history = useHistory();

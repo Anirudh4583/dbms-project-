@@ -76,7 +76,7 @@
 
 .split.left {
   left: 0;
-  background: url('images/donate.jpg');
+  background: url('/src/assets/images/donate.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -91,7 +91,7 @@
 
 .split.right {
   right: 0;
-  background: url('images/request.png');
+  background: url('/src/assets/images/request.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
