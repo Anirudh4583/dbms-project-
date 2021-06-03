@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { Redirect, useHistory } from 'react-router-dom';
+import { FaUser } from 'react-icons/fa';
 import './homeStyle.css';
+import $ from 'jquery';
+import './plugins/grid-gallerymin.css';
+// import '../src/'
 import slider1 from './images/slider/slider1.jpg';
 import slider2 from './images/slider/slider2.jpg';
 import about from './images/about.jpg';
+import logo from './images/logo.jpg';
 // import '../src/assets/css/bootstrapm.css';
 // import '../src/assets/css/fontawsom-all.css';
 // import '../src/assets/plugins/grid-gallery/css/grid-gallerym.css';
@@ -12,7 +17,7 @@ function Homepage() {
   document.title = 'home';
   const history = useHistory();
   const routeChange = () => {
-    let path = '/register';
+    let path = '/login';
     history.push(path);
     console.log('donate/request clicked');
   };
@@ -20,14 +25,24 @@ function Homepage() {
   if (!isOpen) {
     return <Redirect to='/test' />;
   }
+
+  $(window).scroll(function(){
+    var sticky = $('#menu-jk'),
+        scroll = $(window).scrollTop();
+  
+    if (scroll >= 100) sticky.addClass('fixed');
+    else sticky.removeClass('fixed');
+  });
+
   return (
     <div className='home-page'>
+      {/* Header */}
       <header class='continer-fluid '>
         <div id='menu-jk' class='header-bottom'>
           <div class='container'>
             <div class='row nav-row'>
               <div class='col-md-3 logo'>
-                <img src='/src/assets/images/logo.jpg' alt='' />
+                <img src={logo} alt='' />
               </div>
               <div class='col-md-9 nav-col'>
                 <nav class='navbar navbar-expand-lg navbar-light'>
@@ -45,7 +60,7 @@ function Homepage() {
                   <div class='collapse navbar-collapse' id='navbarNav'>
                     <ul class='navbar-nav'>
                       <li class='nav-item active'>
-                        <a class='nav-link' href='/'>
+                        <a class='nav-link' href='#'>
                           Home
                         </a>
                       </li>
@@ -54,25 +69,14 @@ function Homepage() {
                           About Us
                         </a>
                       </li>
-
-                      <li class='nav-item'>
-                        <a class='nav-link' href='#gallery'>
-                          Gallery
-                        </a>
-                      </li>
                       <li class='nav-item'>
                         <a class='nav-link' href='#process'>
                           Process
                         </a>
                       </li>
                       <li class='nav-item'>
-                        <a class='nav-link' href='#blog'>
-                          Blog
-                        </a>
-                      </li>
-                      <li class='nav-item'>
-                        <a class='nav-link' href='#contact'>
-                          Contact US
+                        <a class='nav-link' href='/register' tyle={{color: "red"}}>
+                          <FaUser /> Register
                         </a>
                       </li>
                     </ul>
@@ -84,6 +88,7 @@ function Homepage() {
         </div>
       </header>
 
+      {/* slider */}
       <div class='slider-detail'>
         <div
           id='carouselExampleIndicators'
@@ -112,8 +117,20 @@ function Homepage() {
                 </div>
 
                 <div class=' vbh'>
-                  <button class='btn btn-success bounceInUp' onClick={routeChange}> Donate Now </button>
-                  <button class='btn btn-success bounceInUp' onClick={routeChange}> Request Now </button>
+                  <button
+                    class='btn btn-success bounceInUp'
+                    onClick={routeChange}
+                  >
+                    {' '}
+                    Donate Now{' '}
+                  </button>
+                  <button
+                    class='btn btn-success bounceInUp'
+                    onClick={routeChange}
+                  >
+                    {' '}
+                    Request Now{' '}
+                  </button>
                 </div>
               </div>
             </div>
@@ -159,6 +176,7 @@ function Homepage() {
         </a>
       </div>
 
+      {/* about us */}
       <section id='about' class='contianer-fluid about-us'>
         <div class='container'>
           <div class='row session-title'>
@@ -208,6 +226,132 @@ function Homepage() {
           </div>
         </div>
       </section>
+
+    {/* process donate */}
+      <section id='process' class='donation-care'>
+        <div class='container'>
+          <div class='row session-title'>
+            <h2>How to Donate?</h2>
+            <p>
+              Not sure about to the process of donating blood? No worries, we got you!
+            </p>
+          </div>
+          <div class='row'>
+            <div class='col-md-3 col-sm-6 vd'>
+              <div class='bkjiu'>
+                <img src='assets/images/gallery/g1.jpg' alt='' />
+                <h4>
+                  <b>1. Register</b>
+                </h4>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime saepe,
+                  labore vitae laudantium eius modi.
+                </p>
+              </div>
+            </div>
+            <div class='col-md-3 col-sm-6 vd'>
+              <div class='bkjiu'>
+                <img src='assets/images/gallery/g2.jpg' alt='' />
+                <h4>
+                  <b>2 - </b>Seeing
+                </h4>
+                <p>
+                  Ut wisi enim ad minim veniam, quis laore nostrud exerci tation
+                  ulm hedi corper turet suscipit lobortis
+                </p>
+              </div>
+            </div>
+            <div class='col-md-3 col-sm-6 vd'>
+              <div class='bkjiu'>
+                <img src='assets/images/gallery/g3.jpg' alt='' />
+                <h4>
+                  <b>3 - </b>Donation
+                </h4>
+                <p>
+                  Ut wisi enim ad minim veniam, quis laore nostrud exerci tation
+                  ulm hedi corper turet suscipit lobortis
+                </p>
+              </div>
+            </div>
+            <div class='col-md-3 col-sm-6 vd'>
+              <div class='bkjiu'>
+                <img src='assets/images/gallery/g4.jpg' alt='' />
+                <h4>
+                  <b>4 - </b>Save Life
+                </h4>
+                <p>
+                  Ut wisi enim ad minim veniam, quis laore nostrud exerci tation
+                  ulm hedi corper turet suscipit lobortis
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* process request */}
+      <section id='process' class='donation-care'>
+        <div class='container'>
+          <div class='row session-title'>
+            <h2>How to Request?</h2>
+            <p>
+              Not sure about to the process of requesting blood? No worries, we got you!
+            </p>
+          </div>
+          <div class='row'>
+            <div class='col-md-3 col-sm-6 vd'>
+              <div class='bkjiu'>
+                <img src='assets/images/gallery/g1.jpg' alt='' />
+                <h4>
+                  <b>1 - </b>Registration
+                </h4>
+                <p>
+                  Ut wisi enim ad minim veniam, quis laore nostrud exerci tation
+                  ulm hedi corper turet suscipit lobortis
+                </p>
+              </div>
+            </div>
+            <div class='col-md-3 col-sm-6 vd'>
+              <div class='bkjiu'>
+                <img src='assets/images/gallery/g2.jpg' alt='' />
+                <h4>
+                  <b>2 - </b>Seeing
+                </h4>
+                <p>
+                  Ut wisi enim ad minim veniam, quis laore nostrud exerci tation
+                  ulm hedi corper turet suscipit lobortis
+                </p>
+              </div>
+            </div>
+            <div class='col-md-3 col-sm-6 vd'>
+              <div class='bkjiu'>
+                <img src='assets/images/gallery/g3.jpg' alt='' />
+                <h4>
+                  <b>3 - </b>Donation
+                </h4>
+                <p>
+                  Ut wisi enim ad minim veniam, quis laore nostrud exerci tation
+                  ulm hedi corper turet suscipit lobortis
+                </p>
+              </div>
+            </div>
+            <div class='col-md-3 col-sm-6 vd'>
+              <div class='bkjiu'>
+                <img src='assets/images/gallery/g4.jpg' alt='' />
+                <h4>
+                  <b>4 - </b>Save Life
+                </h4>
+                <p>
+                  Ut wisi enim ad minim veniam, quis laore nostrud exerci tation
+                  ulm hedi corper turet suscipit lobortis
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
     </div>
   );
 }
