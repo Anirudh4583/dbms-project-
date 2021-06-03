@@ -26,10 +26,10 @@ function Homepage() {
     return <Redirect to='/test' />;
   }
 
-  $(window).scroll(function(){
+  $(window).scroll(function () {
     var sticky = $('#menu-jk'),
-        scroll = $(window).scrollTop();
-  
+      scroll = $(window).scrollTop();
+
     if (scroll >= 100) sticky.addClass('fixed');
     else sticky.removeClass('fixed');
   });
@@ -75,7 +75,11 @@ function Homepage() {
                         </a>
                       </li>
                       <li class='nav-item'>
-                        <a class='nav-link' href='/register' tyle={{color: "red"}}>
+                        <a
+                          class='nav-link'
+                          href='/register'
+                          tyle={{ color: 'red' }}
+                        >
                           <FaUser /> Register
                         </a>
                       </li>
@@ -227,13 +231,14 @@ function Homepage() {
         </div>
       </section>
 
-    {/* process donate */}
+      {/* process donate */}
       <section id='process' class='donation-care'>
         <div class='container'>
           <div class='row session-title'>
             <h2>How to Donate?</h2>
             <p>
-              Not sure about to the process of donating blood? No worries, we got you!
+              Not sure about to the process of donating blood? No worries, we
+              got you!
             </p>
           </div>
           <div class='row'>
@@ -244,8 +249,8 @@ function Homepage() {
                   <b>1. Register</b>
                 </h4>
                 <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime saepe,
-                  labore vitae laudantium eius modi.
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Maxime saepe, labore vitae laudantium eius modi.
                 </p>
               </div>
             </div>
@@ -295,7 +300,8 @@ function Homepage() {
           <div class='row session-title'>
             <h2>How to Request?</h2>
             <p>
-              Not sure about to the process of requesting blood? No worries, we got you!
+              Not sure about to the process of requesting blood? No worries, we
+              got you!
             </p>
           </div>
           <div class='row'>
@@ -350,8 +356,6 @@ function Homepage() {
           </div>
         </div>
       </section>
-
-
     </div>
   );
 }
